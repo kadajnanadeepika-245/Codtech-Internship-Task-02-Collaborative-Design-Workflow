@@ -27,6 +27,3 @@ This project focuses on simulating a **collaborative design workflow** using Fig
 - Version control in design platforms
 - Real-time feedback integration and teamwork
 
-## Status
-✅ Completed and submitted for review
-

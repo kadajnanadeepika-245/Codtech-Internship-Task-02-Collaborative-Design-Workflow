@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * DesignFlow - Collaborative Design Workflow Platform
+   * Modern purple/violet primary with mint green secondary
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 225 25% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 225 25% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 225 25% 12%;
+
+    --primary: 258 90% 66%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 162 73% 46%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 210 17% 96%;
+    --muted-foreground: 215 25% 27%;
+
+    --accent: 258 100% 97%;
+    --accent-foreground: 258 90% 66%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 258 90% 66%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Custom DesignFlow variables */
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(258 90% 66%) 0%,
+      hsl(280 90% 66%) 100%
+    );
+    --gradient-secondary: linear-gradient(
+      135deg,
+      hsl(162 73% 46%) 0%,
+      hsl(142 73% 46%) 100%
+    );
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --glass-border: rgba(255, 255, 255, 0.2);
+  }
+
+  .dark {
+    --background: 224 27% 9%;
+    --foreground: 0 0% 95%;
+
+    --card: 224 27% 9%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 224 27% 9%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 258 90% 66%;
+    --primary-foreground: 224 27% 9%;
+
+    --secondary: 162 73% 46%;
+    --secondary-foreground: 224 27% 9%;
+
+    --muted: 225 25% 15%;
+    --muted-foreground: 217 10% 65%;
+
+    --accent: 258 30% 15%;
+    --accent-foreground: 258 90% 66%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 225 25% 15%;
+    --input: 225 25% 15%;
+    --ring: 258 90% 66%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Custom DesignFlow variables - dark mode */
+    --glass-bg: rgba(34, 34, 40, 0.8);
+    --glass-border: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/30;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/50;
+  }
+}
+
+@layer components {
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+}
